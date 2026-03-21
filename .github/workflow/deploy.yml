@@ -18,7 +18,20 @@ jobs:
         ORIGIN_HOST=${{ secrets.DATABRICKS_ORIGIN_HOST }}
         ORIGIN_TOKEN=${{ secrets.DATABRICKS_ORIGIN_TOKEN }}
         NOTEBOOK_BASE="/Workspace/Users/luiss22_99@hotmail.com/databricks_project/proceso"
-        NOTEBOOKS=("1_ingest_ciclo" "1_ingest_matricula" "1_ingest_programa" "2_transform_mat_escuela" "2_transform_prog_estatus" "3_load")  # Agrega más según necesitesas
+        NOTEBOOKS=("proceso/1_ingest_ciclo" 
+                   "proceso/1_ingest_matricula" 
+                   "proceso/1_ingest_programa" 
+                   "proceso/2_transform_mat_escuela" 
+                   "proceso/2_transform_prog_estatus" 
+                   "proceso/3_load"
+                   
+                   "reversion/drop_tabla_rutas"
+                   "reversion/revoke"
+
+                   "seguridad/grant"
+
+                   "prepAmb/0_preparacion_ambiente"
+                   )  # Agrega más según necesitesas
         mkdir -p notebooks_to_deploy
         for nb in "${NOTEBOOKS[@]}"; do
           echo "Exportando $nb en modo raw..."
@@ -323,7 +336,7 @@ jobs:
           "schedule": {
             "quartz_cron_expression": "0 0 8 * * ?",
             "timezone_id": "America/Lima",
-            "pause_status": "PAUSED"
+            "pause_status": "ACTIVE"
           },
           "email_notifications": {
             "on_failure": [],
