@@ -277,6 +277,7 @@ jobs:
                   "esquema_sink": "golden",
                   "esquema_source": "silver"
                 }
+                
               },
               "existing_cluster_id": "$CLUSTER_ID",
               "timeout_seconds": 3600,
