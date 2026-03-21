@@ -40,6 +40,7 @@ jobs:
             "$ORIGIN_HOST/api/2.0/workspace/export?path=$NOTEBOOK_BASE/$nb&format=SOURCE&direct_download=true" \
             --output "notebooks_to_deploy/$nb.py"
         done
+        
     
     - name: Deploy notebooks to Destination Workspace
       run: |
