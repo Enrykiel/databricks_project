@@ -63,8 +63,7 @@ jobs:
             "$DEST_HOST/api/2.0/workspace/import")
           echo "Response: $response"
         done
-    
-    
+
     - name: Check if workflow exists and delete if necessary
       run: |
         DEST_HOST=${{ secrets.DATABRICKS_DEST_HOST }}
