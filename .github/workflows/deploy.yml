@@ -68,7 +68,7 @@ jobs:
       run: |
         DEST_HOST=${{ secrets.DATABRICKS_DEST_HOST }}
         DEST_TOKEN=${{ secrets.DATABRICKS_DEST_TOKEN }}
-        WORKFLOW_NAME="WD_PROD_ETL_INSTITUTO"
+        WORKFLOW_NAME="WF_PROD_ETL_INSTITUTO"
         
         echo "Verificando si existe el workflow: $WORKFLOW_NAME"
         
@@ -132,7 +132,7 @@ jobs:
         # Crear el JSON del workflow usando cluster existente
         cat > workflow_config.json << EOF
         {
-          "name": "WD_PROD_ETL_INSTITUTO",
+          "name": "WF_PROD_ETL_INSTITUTO",
           "format": "MULTI_TASK",
           "tasks": [
            
