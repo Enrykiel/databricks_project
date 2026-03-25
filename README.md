@@ -90,8 +90,8 @@ git push origin master
 ```
 
 **GitHub Actions ejecutará**:
-- 📤 Deploy de notebooks a `/Production/ETL-APPLE`
-- 🔧 Creación del workflow `WF_PROD_ETL_APPLE_SALES`
+- 📤 Deploy de notebooks a `/Workspace/databricks_project/proceso`
+- 🔧 Creación del workflow `WF_PROD_ETL_INSTITUTO`
 - ▶️ Ejecución completa:  Bronze → Silver → Gold
 - 📧 Notificaciones de resultados
 
@@ -105,7 +105,7 @@ git push origin master
 
 ### 🔧 Ejecución Local en Databricks
 
-Navegar a `/Production/ETL-APPLE` y ejecutar en orden:
+Navegar a `/Workspace/databricks_project/proceso` y ejecutar en orden:
 
 ```
 - 0_preparacion_ambiente.py         → Crear esquema
@@ -126,7 +126,7 @@ Navegar a `/Production/ETL-APPLE` y ejecutar en orden:
 
 ```yaml
 Workflow: Deploy ETL Apple Sales And Warranty
-├── Deploy notebooks → /Production/ETL-APPLE
+├── Deploy notebooks → /Workspace/databricks_project/proceso
 ├── Eliminar workflow antiguo (si existe)
 ├── Buscar cluster configurado
 ├── Crear nuevo workflow con 4 tareas
