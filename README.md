@@ -108,14 +108,13 @@ git push origin master
 Navegar a `/Production/ETL-APPLE` y ejecutar en orden:
 
 ```
-- Enviroment preparation.py         → Crear esquema
-- ingest_catalogs.py                → Bronze Layer
-- ingest_sales.py                   → Bronze Layer
-- ingest_warranty.py                → Bronze Layer
-- transform_sales.py                → Silver Layer
-- transform_warranty.py             → Silver Layer
-- load_sales.py                     → Gold Layer
-- load_warranty.py                  → Gold Layer
+- 0_preparacion_ambiente.py         → Crear esquema
+- 1_ingest_ciclo.py                 → Bronze Layer
+- 1_ingest_matricula.py             → Bronze Layer
+- 1_ingest_programa.py              → Bronze Layer
+- 2_transform_mat_escuela.py        → Silver Layer
+- 2_transform_prog_estatus.py       → Silver Layer
+- 3_load.py                         → Gold Layer
 ```
 
 ---
