@@ -90,8 +90,8 @@ git push origin master
 ```
 
 **GitHub Actions ejecutará**:
-- 📤 Deploy de notebooks a `/Production/ETL-APPLE`
-- 🔧 Creación del workflow `WF_PROD_ETL_APPLE_SALES`
+- 📤 Deploy de notebooks a `/Workspace/databricks_project/proceso`
+- 🔧 Creación del workflow `WF_PROD_ETL_INSTITUTO`
 - ▶️ Ejecución completa:  Bronze → Silver → Gold
 - 📧 Notificaciones de resultados
 
@@ -105,17 +105,16 @@ git push origin master
 
 ### 🔧 Ejecución Local en Databricks
 
-Navegar a `/Production/ETL-APPLE` y ejecutar en orden:
+Navegar a `/Workspace/databricks_project/proceso` y ejecutar en orden:
 
 ```
-- Enviroment preparation.py         → Crear esquema
-- ingest_catalogs.py                → Bronze Layer
-- ingest_sales.py                   → Bronze Layer
-- ingest_warranty.py                → Bronze Layer
-- transform_sales.py                → Silver Layer
-- transform_warranty.py             → Silver Layer
-- load_sales.py                     → Gold Layer
-- load_warranty.py                  → Gold Layer
+- 0_preparacion_ambiente.py         → Crear esquema
+- 1_ingest_ciclo.py                 → Bronze Layer
+- 1_ingest_matricula.py             → Bronze Layer
+- 1_ingest_programa.py              → Bronze Layer
+- 2_transform_mat_escuela.py        → Silver Layer
+- 2_transform_prog_estatus.py       → Silver Layer
+- 3_load.py                         → Gold Layer
 ```
 
 ---
@@ -127,7 +126,7 @@ Navegar a `/Production/ETL-APPLE` y ejecutar en orden:
 
 ```yaml
 Workflow: Deploy ETL Apple Sales And Warranty
-├── Deploy notebooks → /Production/ETL-APPLE
+├── Deploy notebooks → /Workspace/databricks_project/proceso
 ├── Eliminar workflow antiguo (si existe)
 ├── Buscar cluster configurado
 ├── Crear nuevo workflow con 4 tareas
